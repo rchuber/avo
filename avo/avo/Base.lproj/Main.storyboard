@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTn-8T-XrD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aTn-8T-XrD" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Rzn-iW-TVv"/>
+                            <constraint firstItem="aTn-8T-XrD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="kvd-xa-gSY"/>
+                            <constraint firstAttribute="trailing" secondItem="aTn-8T-XrD" secondAttribute="trailing" id="phZ-nb-kJo"/>
+                            <constraint firstItem="aTn-8T-XrD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wqr-w0-hMm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="aTn-8T-XrD" id="hZZ-85-RGU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>

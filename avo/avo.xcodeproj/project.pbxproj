@@ -13,6 +13,8 @@
 		94F0219D1CDB5F6700C3E661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94F0219C1CDB5F6700C3E661 /* Assets.xcassets */; };
 		94F021A01CDB5F6700C3E661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F0219E1CDB5F6700C3E661 /* LaunchScreen.storyboard */; };
 		94F021AB1CDB5F6800C3E661 /* avoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F021AA1CDB5F6800C3E661 /* avoUITests.swift */; };
+		94F021B71CDB61FA00C3E661 /* SeniorDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F021B51CDB61FA00C3E661 /* SeniorDashboardViewController.swift */; };
+		94F021B81CDB61FA00C3E661 /* SeniorDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F021B61CDB61FA00C3E661 /* SeniorDashboardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		94F021A61CDB5F6800C3E661 /* avoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = avoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F021AA1CDB5F6800C3E661 /* avoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = avoUITests.swift; sourceTree = "<group>"; };
 		94F021AC1CDB5F6800C3E661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F021B51CDB61FA00C3E661 /* SeniorDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeniorDashboardViewController.swift; sourceTree = "<group>"; };
+		94F021B61CDB61FA00C3E661 /* SeniorDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeniorDashboardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				94F021951CDB5F6700C3E661 /* AppDelegate.swift */,
 				94F021971CDB5F6700C3E661 /* ViewController.swift */,
 				94F021991CDB5F6700C3E661 /* Main.storyboard */,
+				94F021B51CDB61FA00C3E661 /* SeniorDashboardViewController.swift */,
+				94F021B61CDB61FA00C3E661 /* SeniorDashboardViewController.xib */,
 				94F0219C1CDB5F6700C3E661 /* Assets.xcassets */,
 				94F0219E1CDB5F6700C3E661 /* LaunchScreen.storyboard */,
 				94F021A11CDB5F6700C3E661 /* Info.plist */,
@@ -180,6 +186,7 @@
 				94F021A01CDB5F6700C3E661 /* LaunchScreen.storyboard in Resources */,
 				94F0219D1CDB5F6700C3E661 /* Assets.xcassets in Resources */,
 				94F0219B1CDB5F6700C3E661 /* Main.storyboard in Resources */,
+				94F021B81CDB61FA00C3E661 /* SeniorDashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F021B71CDB61FA00C3E661 /* SeniorDashboardViewController.swift in Sources */,
 				94F021981CDB5F6700C3E661 /* ViewController.swift in Sources */,
 				94F021961CDB5F6700C3E661 /* AppDelegate.swift in Sources */,
 			);
