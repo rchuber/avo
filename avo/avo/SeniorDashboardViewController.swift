@@ -1,35 +1,71 @@
 //
-//  SeniorDashboardViewController.swift
-//  avo
-//
-//  Created by Ryan Huber on 5/5/16.
-//  Copyright © 2016 MHCI. All rights reserved.
+//  SeniorDashboardController.swift
 //
 
 import UIKit
 
 class SeniorDashboardViewController: UIViewController {
-
+    
+    var testThing: String = "test!"
+    
+    @IBOutlet weak var seniorCollectionView: UICollectionView!
+    
+    //private var numbers: [Int] = []
+    
+    private var longPressGesture: UILongPressGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        /*for i in 0...100 {
+            numbers.append(i)
+        }*/
+        
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(SeniorDashboardViewController.handleLongGesture(_:)))
+        //self.seniorCollectionView.addGestureRecognizer(longPressGesture)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func handleLongGesture(gesture: UILongPressGestureRecognizer) {
+        
+        switch(gesture.state) {
+            
+        case UIGestureRecognizerState.Began:
+            guard let selectedIndexPath = self.seniorCollectionView.indexPathForItemAtPoint(gesture.locationInView(self.seniorCollectionView)) else {
+                break
+            }
+            seniorCollectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+        case UIGestureRecognizerState.Changed:
+            seniorCollectionView.updateInteractiveMovementTargetPosition(gesture.locationInView(gesture.view!))
+        case UIGestureRecognizerState.Ended:
+            seniorCollectionView.endInteractiveMovement()
+        default:
+            seniorCollectionView.cancelInteractiveMovement()
+        }
     }
-    */
-
+    
 }
+/*
+ extension SeniorDashboardViewController: UICollectionViewDataSource {
+ 
+ func seniorCollectionView(seniorCollectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+ return numbers.count
+ }
+ 
+ func seniorCollectionView(seniorCollectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+ 
+ /*
+ let cell = seniorCollectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! TextCollectionViewCell
+ cell.textLabel.text = "\(numbers[indexPath.item])"
+ */
+ 
+ //return cell
+ }
+ 
+ func seniorCollectionView(seniorCollectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+ 
+ let temp = numbers.removeAtIndex(sourceIndexPath.item)
+ numbers.insert(temp, atIndex: destinationIndexPath.item)
+ }
+ 
+ }
+ */
