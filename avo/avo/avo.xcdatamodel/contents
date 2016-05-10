@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Messages" syncable="YES">
+        <attribute name="dateReceived" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="sentTo" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Senior" inverseName="messages" inverseEntity="Senior" syncable="YES"/>
+    </entity>
+    <entity name="Senior" syncable="YES">
+        <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="medication" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mental" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="sleep" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Messages" inverseName="sentTo" inverseEntity="Messages" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Senior" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Messages" positionX="151" positionY="-36" width="128" height="88"/>
+    </elements>
 </model>
