@@ -23,12 +23,9 @@ class SeniorDashboardViewController: UIViewController {
     
         seniorNameLabel.text = seniorName
         
-        /*for i in 0...100 {
-            numbers.append(i)
-        }*/
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongGesture:")
+        self.seniorCollectionView.addGestureRecognizer(longPressGesture)
         
-        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(SeniorDashboardViewController.handleLongGesture(_:)))
-        //self.seniorCollectionView.addGestureRecognizer(longPressGesture)
     }
     
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
@@ -48,7 +45,8 @@ class SeniorDashboardViewController: UIViewController {
             seniorCollectionView.cancelInteractiveMovement()
         }
     }
-    
+
+
 }
 
  /*extension SeniorDashboardViewController: UICollectionViewDataSource {
@@ -138,7 +136,16 @@ extension SeniorDashboardViewController: UICollectionViewDataSource {
     
     return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        let temp = cellIdentifiers.removeAtIndex(sourceIndexPath.item)
+        cellIdentifiers.insert(temp, atIndex: destinationIndexPath.item)
+    }
 }
+
+
+
 
 
  
