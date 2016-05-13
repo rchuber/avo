@@ -14,24 +14,76 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        // Delete all currently saved seniors in CoreData for testing purposes
+        self.deleteAllData("Senior")
+        
         // Create Sample Seniors
-       let entityDescription = NSEntityDescription.entityForName("Senior", inManagedObjectContext: self.managedObjectContext)
+        let entityDescription = NSEntityDescription.entityForName("Senior", inManagedObjectContext: self.managedObjectContext)
         let newSenior = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext)
-        
-        // Configure New Person
-        newSenior.setValue("GramGram!", forKey: "name")
-        
+
+        newSenior.setValue("Gram Gram", forKey: "name")
+        newSenior.setValue("", forKey: "activity")
+        newSenior.setValue("", forKey: "mental")
+        newSenior.setValue("", forKey: "medication")
+        newSenior.setValue("person-photo-1", forKey: "photo")
+        newSenior.setValue("", forKey: "sleep")
+        newSenior.setValue("", forKey: "vitals")
         do {
-            try newSenior.managedObjectContext?.save()
-        } catch {
-            print(error)
+            try  newSenior.managedObjectContext?.save()
+        } catch let error as NSError  {
+            print("Could not save senior. \(error), \(error.userInfo)")
         }
         
+        newSenior.setValue("Aunt JoJo", forKey: "name")
+        newSenior.setValue("", forKey: "activity")
+        newSenior.setValue("", forKey: "medication")
+        newSenior.setValue("Attention suggested", forKey: "mental")
+        newSenior.setValue("person-photo-2", forKey: "photo")
+        newSenior.setValue("", forKey: "sleep")
+        newSenior.setValue("", forKey: "vitals")
+        do {
+            try  newSenior.managedObjectContext?.save()
+        } catch let error as NSError  {
+            print("Could not save senior. \(error), \(error.userInfo)")
+        }
+        newSenior.setValue("Gramps", forKey: "name")
+        newSenior.setValue("", forKey: "activity")
+        newSenior.setValue("", forKey: "medication")
+        newSenior.setValue("", forKey: "mental")
+        newSenior.setValue("person-photo-3", forKey: "photo")
+        newSenior.setValue("Disrupted", forKey: "sleep")
+        newSenior.setValue("", forKey: "vitals")
+        do {
+            try  newSenior.managedObjectContext?.save()
+        } catch let error as NSError  {
+            print("Could not save senior. \(error), \(error.userInfo)")
+        }
         return true
+    }
+    
+    // Thanks to http://stackoverflow.com/questions/24658641/delete-all-core-data-swift
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.deleteObject(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+        }
     }
     
     func applicationWillResignActive(application: UIApplication) {
