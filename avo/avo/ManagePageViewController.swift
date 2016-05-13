@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 class ManagePageViewController: UIPageViewController {
-    var seniors = ["Granny", "Grammy", "Grampy","BOB"]
+    var seniors = ["Grandma JoJo", "Aunt Dot", "Gramps"]
 
     var currentIndex: Int!
     weak var containerDelegate: ManagePageViewControllerDelegate?

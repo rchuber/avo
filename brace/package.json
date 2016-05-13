@@ -1,0 +1,9 @@
+{
+  "name": "brace-demo",
+  "version": "0.0.1",
+  "description": "A socket-io app to demonstrate theoretical BRACE communication with Avo",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.4.6"
+  }
+}

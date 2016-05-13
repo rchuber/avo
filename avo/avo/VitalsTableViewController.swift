@@ -39,7 +39,9 @@ class VitalsTableViewController: UITableViewController {
         (cell.contentView.viewWithTag(3) as? UIImageView)!.image = UIImage(named: bar[indexPath.row])
         
         if indexPath.row == 3 {
-            cell.backgroundColor = UIColor.redColor()
+            cell.backgroundColor = UIColor(red:0.92, green:0.43, blue:0.48, alpha:1.0)
+        } else {
+            cell.backgroundColor = UIColor(red:0.46, green:0.87, blue:0.60, alpha:1.0)
         }
         
         //cell.title.text = "Blood Pressure"
@@ -67,11 +69,7 @@ class VitalsTableViewController: UITableViewController {
         
         //colors the selected row red
         let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        if indexPath.row == 3 {
-            selectedCell.contentView.backgroundColor = UIColor.redColor()
-        } else {
-            selectedCell.contentView.backgroundColor = UIColor.greenColor()
-        }
+
         
     }
     
