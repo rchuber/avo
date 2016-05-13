@@ -11,15 +11,11 @@ import UIKit
 
 class RecordMessageViewController: UIViewController, AVAudioRecorderDelegate {
     
-    
-    
     let socket = SocketIOClient(socketURL: NSURL(string:"http://localhost:3000")!)
     var name: String?
     var resetAck: SocketAckEmitter?
     
     func addHandlers() {
-
-        
         /*
             // Receiving using socket.io
             socket.on("name") {[weak self] data, ack in
@@ -30,8 +26,6 @@ class RecordMessageViewController: UIViewController, AVAudioRecorderDelegate {
          */
         //socket.onAny {print("Got event: \($0.event), with items: \($0.items)")}
     }
-    
-    
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
