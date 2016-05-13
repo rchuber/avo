@@ -1,6 +1,13 @@
 //
-//  SeniorDashboardController.swift
+//  SeniorDashboardViewController.swift
+//  avo
 //
+//  Created by Helen Li, Ryan Huber, and Tiffany Wang on 5/11/16.
+//
+//  This class provides the view controller for each senior. 
+//  It includes the collectionview that makes up the interaction grid.
+//
+
 
 import UIKit
 import CoreData
@@ -11,7 +18,6 @@ class SeniorDashboardViewController: UIViewController {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
     public var seniorIndex: Int!
-    //public var seniorName: String!
     
     @IBOutlet weak var seniorCollectionView: UICollectionView!
     @IBOutlet weak var seniorNameLabel: UILabel!
@@ -40,9 +46,7 @@ class SeniorDashboardViewController: UIViewController {
         } catch {
             print("Error retrieving seniors.")
         }
-        
-        print(seniorIndex);
-        
+                
         seniorCollectionView.dataSource = self
         
         longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongGesture:")
@@ -81,7 +85,6 @@ extension SeniorDashboardViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var identifier = cellIdentifiers[indexPath.item]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! UICollectionViewCell
-        //cell.backgroundColor = UIColor.redColor()
     
     return cell
     }

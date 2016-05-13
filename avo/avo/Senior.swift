@@ -2,8 +2,7 @@
 //  Senior.swift
 //  avo
 //
-//  Created by Ryan Huber on 5/13/16.
-//  Copyright © 2016 MHCI. All rights reserved.
+//  Created by Helen Li, Ryan Huber, and Tiffany Wang on 5/11/16.
 //
 
 import Foundation

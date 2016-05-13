@@ -1,10 +1,14 @@
 //
-//  RecordMessageViewController.swift
-//  Project33
+//  MessagesViewController.swift
+//  avo
 //
-//  Created by Hudzilla on 19/09/2015.
-//  Copyright © 2015 Paul Hudson. All rights reserved.
+//  Created by Helen Li, Ryan Huber, and Tiffany Wang on 5/11/16.
 //
+//  This controller provides the recording functionality.
+//  It the recording is sent using Socket.IO to a local server
+//  for the purposes of demonstrating how the audio would play
+//  to an advisor.
+//  
 
 import AVFoundation
 import UIKit
@@ -16,18 +20,6 @@ class RecordMessageViewController: UIViewController, AVAudioRecorderDelegate {
     let socket = SocketIOClient(socketURL: NSURL(string:"http://localhost:3000")!)
     var name: String?
     var resetAck: SocketAckEmitter?
-    
-    func addHandlers() {
-        /*
-            // Receiving using socket.io
-            socket.on("name") {[weak self] data, ack in
-            if let name = data[0] as? String {
-                self?.name = name
-            }
-        }
-         */
-        //socket.onAny {print("Got event: \($0.event), with items: \($0.items)")}
-    }
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
@@ -46,7 +38,6 @@ class RecordMessageViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         
         // Socket.IO
-        addHandlers()
         socket.connect()
         
         recordingSession = AVAudioSession.sharedInstance()

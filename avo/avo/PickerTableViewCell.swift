@@ -1,14 +1,14 @@
 //
 //  PickerTableViewCell.swift
-//  accordian_2
+//  avo
 //
-//  Created by Helen Li on 5/11/16.
-//  Copyright © 2016 Helen Li. All rights reserved.
+//  Created by Helen Li, Ryan Huber, and Tiffany Wang on 5/11/16.
+//
+//  This class supports the accordion functionality on the VitalsTableViewController
 //
 
 import UIKit
 import CoreData
-
 
 class PickerTableViewCell : UITableViewCell {
     
@@ -17,7 +17,6 @@ class PickerTableViewCell : UITableViewCell {
     @IBOutlet weak var infoGraphic: UIImageView!
     
     class var expandedHeight: CGFloat { get { return  200  } }
-    
     class var defaultHeight: CGFloat { get { return  44  } }
     
     func checkHeight() {

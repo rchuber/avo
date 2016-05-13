@@ -1,10 +1,11 @@
 //
-//  ViewController.swift
-//  accordian_2
+//  VitalsTableController.swift
+//  avo
 //
-//  Created by Helen Li on 5/11/16.
-//  Copyright © 2016 Helen Li. All rights reserved.
+//  Created by Helen Li, Ryan Huber, and Tiffany Wang on 5/11/16.
 //
+//  This view includes the accordion for showing detailed vital data.
+//  
 
 import UIKit
 import CoreData
@@ -32,12 +33,10 @@ class VitalsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! PickerTableViewCell
-        //cell.textLabel?.text = vitals[indexPath.row]
         let label_title : UILabel? = self.view.viewWithTag(1) as? UILabel
         label_title?.text = vitals[indexPath.row]
         let state_title : UILabel? = self.view.viewWithTag(2) as? UILabel
         state_title?.text = state[indexPath.row]
-        //(cell.title.viewWithTag(1) as? UILabel)!.label = UILabel(named: vitals[indexPath.row])
         (cell.contentView.viewWithTag(3) as? UIImageView)!.image = UIImage(named: bar[indexPath.row])
         
         if indexPath.row == 3 {
@@ -46,7 +45,6 @@ class VitalsTableViewController: UITableViewController {
             cell.backgroundColor = UIColor(red:0.46, green:0.87, blue:0.60, alpha:1.0)
         }
         
-        //cell.title.text = "Blood Pressure"
         return cell
     }
     
@@ -72,7 +70,6 @@ class VitalsTableViewController: UITableViewController {
         //colors the selected row red
         let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
 
-        
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

@@ -2,12 +2,9 @@
 //  Senior+CoreDataProperties.swift
 //  avo
 //
-//  Created by Ryan Huber on 5/13/16.
-//  Copyright © 2016 MHCI. All rights reserved.
+//  Created by Helen Li, Ryan Huber, and Tiffany Wang on 5/11/16.
 //
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
-//
+
 
 import Foundation
 import CoreData

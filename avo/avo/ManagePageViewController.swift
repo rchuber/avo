@@ -2,10 +2,10 @@
 //  ViewController.swift
 //  avo
 //
-//  Created by Ryan Huber on 5/5/16.
-//  Copyright © 2016 MHCI. All rights reserved.
+//  Created by Helen Li, Ryan Huber, and Tiffany Wang on 5/11/16.
 //
-
+//  This class provides the controller that allows for paging between different seniors.
+//
 
 import UIKit
 import CoreData
@@ -79,7 +79,6 @@ class ManagePageViewController: UIPageViewController {
 
 //MARK: implementation of UIPageViewControllerDataSource
 extension ManagePageViewController: UIPageViewControllerDataSource {
-    // 1
     func pageViewController(pageViewController: UIPageViewController,
                             viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
@@ -95,7 +94,6 @@ extension ManagePageViewController: UIPageViewControllerDataSource {
         return nil
     }
     
-    // 2
     func pageViewController(pageViewController: UIPageViewController,
                             viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
