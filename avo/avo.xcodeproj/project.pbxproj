@@ -35,6 +35,8 @@
 		943FB7981CE54AD5009CF2C5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FB7811CE54AD5009CF2C5 /* String.swift */; };
 		943FB7991CE54AD5009CF2C5 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FB7821CE54AD5009CF2C5 /* SwiftRegex.swift */; };
 		943FB79A1CE54AD5009CF2C5 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FB7831CE54AD5009CF2C5 /* WebSocket.swift */; };
+		943FB79D1CE5A504009CF2C5 /* Senior+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FB79B1CE5A504009CF2C5 /* Senior+CoreDataProperties.swift */; };
+		943FB79E1CE5A504009CF2C5 /* Senior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FB79C1CE5A504009CF2C5 /* Senior.swift */; };
 		94F021961CDB5F6700C3E661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F021951CDB5F6700C3E661 /* AppDelegate.swift */; };
 		94F021981CDB5F6700C3E661 /* ManagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F021971CDB5F6700C3E661 /* ManagePageViewController.swift */; };
 		94F0219B1CDB5F6700C3E661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F021991CDB5F6700C3E661 /* Main.storyboard */; };
@@ -83,6 +85,8 @@
 		943FB7811CE54AD5009CF2C5 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		943FB7821CE54AD5009CF2C5 /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRegex.swift; sourceTree = "<group>"; };
 		943FB7831CE54AD5009CF2C5 /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		943FB79B1CE5A504009CF2C5 /* Senior+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Senior+CoreDataProperties.swift"; path = "avo/Senior+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		943FB79C1CE5A504009CF2C5 /* Senior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Senior.swift; path = avo/Senior.swift; sourceTree = "<group>"; };
 		94F021921CDB5F6700C3E661 /* avo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = avo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F021951CDB5F6700C3E661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94F021971CDB5F6700C3E661 /* ManagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 		94F021891CDB5F6700C3E661 = {
 			isa = PBXGroup;
 			children = (
+				943FB79B1CE5A504009CF2C5 /* Senior+CoreDataProperties.swift */,
+				943FB79C1CE5A504009CF2C5 /* Senior.swift */,
 				94F021941CDB5F6700C3E661 /* avo */,
 				94F021A91CDB5F6800C3E661 /* avoUITests */,
 				94F021931CDB5F6700C3E661 /* Products */,
@@ -295,9 +301,11 @@
 			files = (
 				943FB7981CE54AD5009CF2C5 /* String.swift in Sources */,
 				943FB7911CE54AD5009CF2C5 /* SocketIOClientSpec.swift in Sources */,
+				943FB79E1CE5A504009CF2C5 /* Senior.swift in Sources */,
 				943FB7841CE54AD5009CF2C5 /* NSCharacterSet.swift in Sources */,
 				943FB7851CE54AD5009CF2C5 /* SocketAckEmitter.swift in Sources */,
 				943FB7871CE54AD5009CF2C5 /* SocketAnyEvent.swift in Sources */,
+				943FB79D1CE5A504009CF2C5 /* Senior+CoreDataProperties.swift in Sources */,
 				943FB7901CE54AD5009CF2C5 /* SocketIOClientOption.swift in Sources */,
 				943FB7681CE521B7009CF2C5 /* PickerTableViewCell.swift in Sources */,
 				94F021BC1CE12DF200C3E661 /* SeniorDashboardViewController.swift in Sources */,

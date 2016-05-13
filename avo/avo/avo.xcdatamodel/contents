@@ -5,7 +5,7 @@
         <attribute name="message" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="sentTo" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Senior" inverseName="messages" inverseEntity="Senior" syncable="YES"/>
     </entity>
-    <entity name="Senior" syncable="YES">
+    <entity name="Senior" representedClassName=".Senior" syncable="YES">
         <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="medication" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mental" optional="YES" attributeType="String" syncable="YES"/>

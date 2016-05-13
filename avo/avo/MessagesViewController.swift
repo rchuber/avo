@@ -8,6 +8,8 @@
 
 import AVFoundation
 import UIKit
+import CoreData
+
 
 class RecordMessageViewController: UIViewController, AVAudioRecorderDelegate {
     

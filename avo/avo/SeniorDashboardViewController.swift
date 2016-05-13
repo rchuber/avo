@@ -3,11 +3,15 @@
 //
 
 import UIKit
+import CoreData
 
 class SeniorDashboardViewController: UIViewController {
     
+    // Retreive the managedObjectContext from AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
     public var seniorIndex: Int!
-    public var seniorName: String!
+    //public var seniorName: String!
     
     @IBOutlet weak var seniorCollectionView: UICollectionView!
     @IBOutlet weak var seniorNameLabel: UILabel!
@@ -17,14 +21,29 @@ class SeniorDashboardViewController: UIViewController {
     
     private var longPressGesture: UILongPressGestureRecognizer!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        seniorCollectionView.dataSource = self
-    
-        seniorNameLabel.text = seniorName
+        // Create a new fetch request using the LogItem entity
+        let fetchRequest = NSFetchRequest(entityName: "Senior")
         
-        seniorImageView.image = UIImage(named: seniorName)
+        // Execute the fetch request, and cast the results to an array of LogItem objects
+        do {
+            let seniors = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Senior]
+            let senior = seniors![seniorIndex]
+            //seniorNameLabel.text = seniorName
+            seniorNameLabel.text = senior.valueForKey("name") as? String
+            
+            //seniorImageView.image = UIImage(named: seniorName)
+            seniorImageView.image = UIImage(named: (senior.valueForKey("photo") as? String)!)
+        } catch {
+            print("Error retrieving seniors.")
+        }
+        
+        print(seniorIndex);
+        
+        seniorCollectionView.dataSource = self
         
         longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongGesture:")
         self.seniorCollectionView.addGestureRecognizer(longPressGesture)

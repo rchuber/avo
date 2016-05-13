@@ -33,7 +33,6 @@ extension ContainerViewController: ManagePageViewControllerDelegate {
     func managePageViewController(managePageViewController: ManagePageViewController,
                                   didUpdatePageIndex index: Int) {
         pageControl.currentPage = index
-        print(index)
     }
     
 }

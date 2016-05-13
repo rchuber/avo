@@ -11,9 +11,16 @@ import UIKit
 import CoreData
 
 class ManagePageViewController: UIPageViewController {
-    var seniors = ["Grandma JoJo", "Aunt Dot", "Gramps"]
+    
+    // Retreive the managedObjectContext from AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+
+    //var seniors = ["Grandma JoJo", "Aunt Dot", "Gramps"]
 
     var currentIndex: Int!
+    var seniorsCount: Int!
+    
     weak var containerDelegate: ManagePageViewControllerDelegate?
 
     override func viewDidLoad() {
@@ -24,20 +31,35 @@ class ManagePageViewController: UIPageViewController {
 
         self.currentIndex = 0
         
-        // 1
-        if let viewController = viewSeniorDashboardViewController(currentIndex ?? 0) {
-            let viewControllers = [viewController]
-            // 2
-            setViewControllers(
-                viewControllers,
-                direction: .Forward,
-                animated: false,
-                completion: nil
-            )
-        }
         
-        // need to send page view info to the parent
-        containerDelegate?.managePageViewController(self, didUpdatePageCount: seniors.count)
+        // Create a new fetch request using the LogItem entity
+        let fetchRequest = NSFetchRequest(entityName: "Senior")
+        
+        // Execute the fetch request, and cast the results to an array of LogItem objects
+        do {
+            let seniors = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Senior]
+            seniorsCount = seniors!.count
+            
+            // 1
+            if let viewController = viewSeniorDashboardViewController(currentIndex ?? 0) {
+                let viewControllers = [viewController]
+                // 2
+                setViewControllers(
+                    viewControllers,
+                    direction: .Forward,
+                    animated: false,
+                    completion: nil
+                )
+            }
+            
+            // need to send page view info to the parent
+            containerDelegate?.managePageViewController(self, didUpdatePageCount: seniors!.count)
+            
+        } catch {
+            print("Error retrieving seniors.")
+        }
+
+
         
     }
     
@@ -47,7 +69,8 @@ class ManagePageViewController: UIPageViewController {
             page = storyboard.instantiateViewControllerWithIdentifier("seniorDashboardViewStoryboard")
                 as? SeniorDashboardViewController {
             
-            page.seniorName = seniors[index]
+            //page.seniorName = seniors[index]
+            //page.seniorName = seniors[index].valueForKey("name") as? String
             page.seniorIndex = index
             return page
         }
@@ -85,7 +108,7 @@ extension ManagePageViewController: UIPageViewControllerDataSource {
             var index = viewController.seniorIndex
             guard index != NSNotFound else { return nil }
             index = index + 1
-            guard index != seniors.count else {return nil}
+            guard index != seniorsCount else {return nil}
             
             return viewSeniorDashboardViewController(index)
             

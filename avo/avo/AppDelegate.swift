@@ -23,9 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Create Sample Seniors
         let entityDescription = NSEntityDescription.entityForName("Senior", inManagedObjectContext: self.managedObjectContext)
-        let newSenior = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext)
-
-        newSenior.setValue("Gram Gram", forKey: "name")
+        var newSenior = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext)
+        newSenior.setValue("Grammy Gram", forKey: "name")
         newSenior.setValue("", forKey: "activity")
         newSenior.setValue("", forKey: "mental")
         newSenior.setValue("", forKey: "medication")
@@ -38,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Could not save senior. \(error), \(error.userInfo)")
         }
         
+        newSenior = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext)
         newSenior.setValue("Aunt JoJo", forKey: "name")
         newSenior.setValue("", forKey: "activity")
         newSenior.setValue("", forKey: "medication")
@@ -50,6 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error as NSError  {
             print("Could not save senior. \(error), \(error.userInfo)")
         }
+        
+        newSenior = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext)
         newSenior.setValue("Gramps", forKey: "name")
         newSenior.setValue("", forKey: "activity")
         newSenior.setValue("", forKey: "medication")

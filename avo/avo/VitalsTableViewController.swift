@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 let cellID = "cell"
 
