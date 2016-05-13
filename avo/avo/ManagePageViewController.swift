@@ -16,8 +16,6 @@ class ManagePageViewController: UIPageViewController {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
 
-    //var seniors = ["Grandma JoJo", "Aunt Dot", "Gramps"]
-
     var currentIndex: Int!
     var seniorsCount: Int!
     
@@ -69,8 +67,6 @@ class ManagePageViewController: UIPageViewController {
             page = storyboard.instantiateViewControllerWithIdentifier("seniorDashboardViewStoryboard")
                 as? SeniorDashboardViewController {
             
-            //page.seniorName = seniors[index]
-            //page.seniorName = seniors[index].valueForKey("name") as? String
             page.seniorIndex = index
             return page
         }
